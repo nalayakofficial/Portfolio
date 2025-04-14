@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styling.css" />
+    <script src="https://kit.fontawesome.com/77705145e1.js" crossorigin="anonymous"></script>
+
+  </head>
+  <body>
+    <div class="light" id="light"></div>
+    <script>
+        const light = document.getElementById('light');
+        let mouseX = 0;
+        let mouseY = 0;
+    
+        // Smoothly update light position
+        const updateLightPosition = () => {
+          const dx = (mouseX - parseFloat(light.style.left || 0)) / 20;
+          const dy = (mouseY - parseFloat(light.style.top || 0)) / 20;
+          light.style.left = `${(parseFloat(light.style.left || 0) + dx)}px`;
+          light.style.top = `${(parseFloat(light.style.top || 0) + dy)}px`;
+    
+          requestAnimationFrame(updateLightPosition);
+        };
+    
+        document.addEventListener('mousemove', (event) => {
+          mouseX = event.pageX;
+          mouseY = event.pageY;
+        });
+    
+        updateLightPosition();
+      </script>
+
+    <header class="header">
+      <div class="navContent">
+        <div class="leftLogo">
+          <a href="index.html"><h1>Anush.</h1></a>
+        </div>
+        <div class="rightNav">
+          <nav>
+            <ul>
+              <a href="#hero"><li class="active">Home</li></a>
+              <a href="#about"><li>About</li></a>
+              <a href="#education"><li>Education</li></a>
+              <a href="#skills"><li>Skills</li></a>
+              <a href="#contact"><li>Contact</li></a>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- hero starts -->
+    <section class="hero" id="hero">
+      <div class="left">
+        <h1>Hi, I'm <span>Anush Shrestha</span></h1>
+        <div class="heroAnimate">
+          <h3>NOOB Programmer</h3>
+        </div>
+        <p>
+          Mostly Passionate about programming, I have experience in HTML, CSS, and foundational knowledge of Java, C, and SQL queries. Hailing from Nepal, I thrive on exploring new challenges and creating impactful solutions through code.
+        </p>
+        <div class="buttonBox">
+          <a href="#" class="btn">Hire Me</a>
+          <a href="#" class="btn">Contact</a>
+        </div>
+        <div class="socialLinks">
+              <a href="https://www.facebook.com/Anush232" target="_blank"><i class="fa fa-facebook-official fa-2x"></i></a>
+              <a href="https://www.instagram.com/_anush232" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>   
+              <a href="https://www.github.com/Anush980" target="_blank"><i class="fab fa-github fa-2x"></i></a> 
+              <a href="https://www.linkedin.com/in/anush232" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a> 
+        </div>
+        </div>
+        <!-- right div starts here -->
+         <div class="right">
+            <div class="heroLogo">
+                <div class="circle">
+                    <!-- <img src="../resources/profile.jpg"> -->
+                </div>
+         </div>
+      </div>
+    </section>
+  <!-- About section starts here -->
+  <section class="about" id="about">
+    <div class="title">
+      <h1>About <span>Me</span></h1>
+    </div>
+   <div class="logo">
+   </div>
+   <h1>NOOB Programmer!</h1>
+   <div class="aboutme">
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
+      saepe quidem neque distinctio et laudantium asperiores soluta
+      ipsum blanditiis aperiam cumque ab, qua erat sed rerum magni assumenda
+      provident eius voluptas quidem neque distinctio et laudantiumasperiores soluta ipsum
+      blanditiis aperiam cumque ab, quaerat sed rerum magni assumenda
+      provident eius voluptas.
+    </p>
+   </div>
+  </section>
+  <!-- Education section starts from here -->
+  <section class="education" id="education">
+    <div class="title">
+      <h1>My <span>Education</span></h1>
+    </div>
+    <div class="table">
+      <div class="box">primary</div>
+      <div class="box">secondary</div>
+      <div class="box">college</div>
+      <div class="box">job</div>
+    </div>
+   </section>
+  </body>
+</html>

@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --background-color: #060817;
+  --nav-color: #01020a;
+  --about-background-color:#0d0d0e;
+  --text-color: #d4d0d0;
+  --main-color: #6fd21d;
+  --animate-color: #56b20b;
+  --socialLink-color: #a5a3a3;
+  --button-font: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+html{
+    /* overflow: hidden; */
+    scroll-behavior:smooth;
+}
+body {
+  background-color: var(--background-color);
+
+  color: var(--text-color);
+}
+
+.light {
+    position: absolute;
+    width: 80rem;
+    height: 80rem;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.17), rgba(255, 255, 255, 0));
+    border-radius: 100%;
+    pointer-events: none; /* Prevent interaction issues */
+    transform: translate(-50%, -50%);
+    opacity: 0.1;
+    transition: transform 0.12s ease-out, opacity 0.12s ease-out, width 0.12s ease-out, height 0.12s ease-out;
+  }
+/* header content styling */
+
+.header .navContent {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+  background-color: var(--background-color);
+  z-index:100;
+}
+.header .navContent .leftLogo {
+  padding-left: 3rem;
+}
+.header .navContent .leftLogo a {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  
+}
+
+.header .navContent .rightNav nav ul {
+  display: flex;
+  margin-right: 3rem;
+}
+
+.header .navContent .rightNav nav ul a {
+  font-size: 1rem;
+  font-weight: 500rem;
+  margin-left: 2rem;
+  color: var(--text-color);
+  list-style: none;
+}
+.header .navContent .rightNav nav ul a:hover {
+  color: var(--main-color);
+  transform: scale(1.1);
+}
+.header .navContent .rightNav nav ul a .active {
+  color: var(--main-color);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* hero content styling */
+.hero {
+  padding: 8rem 5%;
+  display: flex;
+}
+.hero .left {
+  padding: 1rem;
+  max-width: 35rem;
+}
+.hero .left h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.hero .left h1 span {
+  font-size: 2.5rem;
+  font-weight: 750;
+  line-height: 1.2;
+}
+.hero .left .heroAnimate h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  /* color:var(--main-color) */
+  color: transparent;
+  -webkit-text-stroke: 0.06rem var(--animate-color);
+}
+.hero .left p {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+}
+.hero .left .buttonBox {
+  margin-top: 2.5rem;
+  padding: 2rem 0 0 0;
+}
+.hero .left .buttonBox .btn {
+  font-family: --button-font;
+  font-weight: bold;
+  margin: 0 0 2rem 3rem;
+  padding: 0.8rem 2rem;
+  border-radius: 10%;
+  background-color: var(--main-color);
+  color: var(--background-color);
+}
+.hero .left .socialLinks {
+  display: flex;
+  margin-top: 17%;
+  margin-left: 5%;
+}
+.hero .left .socialLinks a {
+  padding: 1rem 0 3rem 2rem;
+  color: var(--socialLink-color);
+}
+
+/* div right starts */
+.hero .right {
+  padding-left: 13%;
+}
+.hero .right .heroLogo .circle {
+  border: 2px solid rgb(78, 104, 74);
+  background-color: transparent;
+  width:24rem;
+  height: 24rem;
+  border-radius: 50%;
+}
+.hero .right .heroLogo .circle img{
+    width:24rem;
+    height:24rem;
+    border-radius: 50%;
+}
+/* About styling starts from here */
+.about{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.about .title{
+ padding-bottom: 3rem;
+}
+.about .title h1 span{
+  color:var(--main-color);
+}
+.about .logo {
+  display:flex;
+  width:13rem;
+  height:13rem;
+  border-radius: 50%;
+  border: 2px solid rgb(78, 104, 74);
+}
+.about h1{
+  padding-top: 1rem;
+}
+.about .aboutme p{
+  margin:2rem 3.5rem 0 3.5rem;
+
+}
+/*Eduactional section starts from here*/
+.education{
+  margin-top: 5rem;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ 
+}
+.education .title{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.education .title h1 span {
+  color:var(--main-color);
+}
+.education .table{
+  display: block;
+}
+.education .box{
+  display: flex;
+  justify-content: center;
+  width:20rem;
+  height:5rem;
+  border:2px solid white;
+  border-radius: 3%;
+  margin: 1rem 0 0 7rem;
+
+}
+
+
+/* animation */
+@keyframes fadeIn{
+    from {
+        background-color: red;
+        opacity: 0;
+    }
+    to{
+        background-color: white;
+        opacity:1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
