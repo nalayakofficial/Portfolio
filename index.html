@@ -2,37 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Portfolio</title>
     <link rel="stylesheet" href="styling.css" />
     <script src="https://kit.fontawesome.com/77705145e1.js" crossorigin="anonymous"></script>
 
   </head>
   <body>
-    <div class="light" id="light"></div>
-    <script>
-        const light = document.getElementById('light');
-        let mouseX = 0;
-        let mouseY = 0;
-    
-        // Smoothly update light position
-        const updateLightPosition = () => {
-          const dx = (mouseX - parseFloat(light.style.left || 0)) / 20;
-          const dy = (mouseY - parseFloat(light.style.top || 0)) / 20;
-          light.style.left = `${(parseFloat(light.style.left || 0) + dx)}px`;
-          light.style.top = `${(parseFloat(light.style.top || 0) + dy)}px`;
-    
-          requestAnimationFrame(updateLightPosition);
-        };
-    
-        document.addEventListener('mousemove', (event) => {
-          mouseX = event.pageX;
-          mouseY = event.pageY;
-        });
-    
-        updateLightPosition();
-      </script>
-
+    <div class="light" id="light">
+     <!-- background animation -->
+    </div>
+  <!-- header navigation starts here -->
     <header class="header">
       <div class="navContent">
         <div class="leftLogo">
@@ -40,13 +20,20 @@
         </div>
         <div class="rightNav">
           <nav>
-            <ul>
-              <a href="#hero"><li class="active">Home</li></a>
-              <a href="#about"><li>About</li></a>
-              <a href="#education"><li>Education</li></a>
-              <a href="#skills"><li>Skills</li></a>
-              <a href="#contact"><li>Contact</li></a>
+            <div class="hamburger" id="hamburger" onclick="hamburgerAction()">
+              <span></span>
+              <span></span>
+              <span></span> 
+              
+            </div>
+            <ul id="menu">
+              <a href="#hero"><li class="navItem active" onclick="changeActive(0)">Home</li></a>
+              <a href="#about"><li class="navItem" onclick="changeActive(1)">About</li></a>
+              <a href="#education"><li class="navItem" onclick="changeActive(2)">Education</li></a>
+              <a href="#skills"><li class="navItem" onclick="changeActive(3)">Skills</li></a>
+              <a href="#contact"><li class="navItem" onclick="changeActive(4)">Contact</li></a>
             </ul>
+            
           </nav>
         </div>
       </div>
@@ -63,8 +50,8 @@
           Mostly Passionate about programming, I have experience in HTML, CSS, and foundational knowledge of Java, C, and SQL queries. Hailing from Nepal, I thrive on exploring new challenges and creating impactful solutions through code.
         </p>
         <div class="buttonBox">
-          <a href="#" class="btn">Hire Me</a>
-          <a href="#" class="btn">Contact</a>
+          <a href="./Resources/CV.pdf" target="_blank" class="btn">Download CV</a>
+        
         </div>
         <div class="socialLinks">
               <a href="https://www.facebook.com/Anush232" target="_blank"><i class="fa fa-facebook-official fa-2x"></i></a>
@@ -92,12 +79,8 @@
    <h1>NOOB Programmer!</h1>
    <div class="aboutme">
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
-      saepe quidem neque distinctio et laudantium asperiores soluta
-      ipsum blanditiis aperiam cumque ab, qua erat sed rerum magni assumenda
-      provident eius voluptas quidem neque distinctio et laudantiumasperiores soluta ipsum
-      blanditiis aperiam cumque ab, quaerat sed rerum magni assumenda
-      provident eius voluptas.
+      Mostly Passionate about programming, I have experience in HTML, CSS, and foundational 
+      knowledge of Java, C, and SQL queries. Hailing from Nepal, I thrive on exploring new challenges and creating impactful solutions through code.
     </p>
    </div>
   </section>
@@ -115,3 +98,5 @@
    </section>
   </body>
 </html>
+
+<script src="script.js"></script>
